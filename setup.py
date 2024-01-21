@@ -19,8 +19,8 @@ with open('README.md', 'r', encoding='utf-8') as f:
    
 
 __version__ = "0.0.4"
-REPO_NAME = "mongodb_connector"
-PKG_NAME= "MongoDB-Connect"
+REPO_NAME = "MLOps"
+PKG_NAME= "MLOps"
 AUTHOR_USER_NAME = "Karnsinh96"
 AUTHOR_EMAIL = "karnsinh96@gmail.com"
 
@@ -29,7 +29,7 @@ setup(
     version=__version__,
     author=AUTHOR_USER_NAME,
     author_email=AUTHOR_EMAIL,
-    description="A python package for connecting with database.",
+    description="MLOps Project with various opertations",
     long_description=long_description,
     long_description_content="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
