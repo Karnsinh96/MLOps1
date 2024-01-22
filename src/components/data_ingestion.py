@@ -10,6 +10,8 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from pathlib import Path
 
+from components.data_transformation import DataTransformation,DataTransformationConfig
+
 @dataclass
 class DataIngestionConfig:
     raw_data_path:str=os.path.join("artifacts","raw.csv")
@@ -49,8 +51,3 @@ class DataIngestion:
         except Exception as e:
             logging.info()
             raise customexception(e,sys)
-
-
-if __name__=="__main__":
-    obj=DataIngestion()
-    obj.initiate_data_ingestion()
