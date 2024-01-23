@@ -1,19 +1,18 @@
 import os
 import sys
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from urllib.parse import urlparse
 import mlflow
 import mlflow.sklearn
 import numpy as np
 import pickle
 from utils.utils import load_object
-from urllib.parse import urlparse
-from sklearn.metrics import mean_squared_error,mean_absolute_error,r2_score
-from logger.logs import logging
-from exception. exception import customexception
 
 class ModelEvaluation:
     def __init__(self):
         pass
 
+    
     def eval_metrics(self,actual, pred):
         rmse = np.sqrt(mean_squared_error(actual, pred))# here is RMSE
         mae = mean_absolute_error(actual, pred)# here is MAE
@@ -27,7 +26,7 @@ class ModelEvaluation:
             model_path=os.path.join("artifacts","model.pkl")
             model=load_object(model_path)
 
-            mlflow.set_registry_uri("https://dagshub.com/sunny.savita/fsdsmendtoend.mlflow")
+            mlflow.set_registry_uri("")
             
             tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
             print(tracking_url_type_store)
